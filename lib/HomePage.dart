@@ -5,12 +5,7 @@ class HomePage extends StatelessWidget {
   final List<Tab> myTabs = <Tab>[
     new Tab(text: '语文'),
     new Tab(text: '数学'),
-    new Tab(text: '英语'),
-    new Tab(text: '化学'),
-    new Tab(text: '物理'),
-    new Tab(text: '政治'),
-    new Tab(text: '经济'),
-    new Tab(text: '体育'),
+    new Tab(text: '英语')
   ];
 
   @override
