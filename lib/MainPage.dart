@@ -28,11 +28,6 @@ class MainPageState extends State<MainPageWidget> {
     initData();
 
     return new Scaffold(
-      appBar: new AppBar(
-        title: new Center(
-          child: new Text(appBarTitles[_tabIndex]),
-        ),
-      ),
       body: _bodies[_tabIndex],
       bottomNavigationBar: new BottomNavigationBar(
         items: <BottomNavigationBarItem>[

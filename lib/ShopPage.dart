@@ -6,7 +6,12 @@ class ShopPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       home: new Scaffold(
-        body: new Center(child: new Text('ShopPage'),),
+        appBar: new AppBar(
+          title: new Center(
+            child: new Text('Shop'),
+          ),
+        ),
+        body: new Text('ShopPage'),
       ),
     );
   }
