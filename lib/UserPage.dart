@@ -4,9 +4,8 @@ class UserPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: new Container(
-        child: new Text('user'),
-      ),
+      appBar: new AppBar(),
+      body: new Text('user'),
     );
   }
 }

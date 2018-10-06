@@ -43,7 +43,7 @@ class HomePageState extends State<HomePageWidget>
                 }));
               }),
           new PopupMenuButton<String>(
-              icon: new Icon(Icons.more_vert),
+              icon: new Icon(Icons.add),
               onSelected: (String value) {
                 setState(() {
                   print(value);
