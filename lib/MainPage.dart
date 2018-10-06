@@ -18,68 +18,45 @@ class MainPageWidget extends StatefulWidget {
   }
 }
 
-class MainPageState extends State<MainPageWidget> with SingleTickerProviderStateMixin{
-  int _tabIndex = 0;
-  var tabImages;
-  var appBarTitles = ['首页', '商铺', '消息', '我的'];
+class MainPageState extends State<MainPageWidget>
+    with SingleTickerProviderStateMixin {
+  PageController pageController;
+  int page = 0;
 
   @override
   Widget build(BuildContext context) {
-    initData();
-
     return new Scaffold(
-      body: _bodies[_tabIndex],
+      body: new PageView(
+          children: <Widget>[new HomePage(), new ShopPage()],
+          controller: pageController,
+          onPageChanged: onPageChanged),
       bottomNavigationBar: new BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
+        items: [
           new BottomNavigationBarItem(
-              icon: getTabIcon(0), title: getTabTitle(0)),
+              icon: new Icon(Icons.home), title: new Text('Home')),
           new BottomNavigationBarItem(
-              icon: getTabIcon(1), title: getTabTitle(1))
+              icon: new Icon(Icons.shop), title: new Text('Shop'))
         ],
-        type: BottomNavigationBarType.fixed,
-        currentIndex: _tabIndex,
-        onTap: (index) {
-          setState(() {
-            _tabIndex = index;
-          });
-        },
+        onTap: onTap,
+        currentIndex: page,
       ),
     );
   }
 
-  Image getTabImage(path) {
-    return new Image.asset(path, width: 30.0, height: 30.0);
+  @override
+  void initState() {
+    super.initState();
+    pageController = new PageController(initialPage: this.page);
   }
 
-  Image getTabIcon(int curIndex) {
-    if (curIndex == _tabIndex) {
-      return tabImages[curIndex][1];
-    }
-    return tabImages[curIndex][0];
+  void onPageChanged(int page) {
+    setState(() {
+      this.page = page;
+    });
   }
 
-  Text getTabTitle(int curIndex) {
-    if (curIndex == _tabIndex) {
-      return new Text(appBarTitles[curIndex],
-          style: new TextStyle(color: Colors.blue));
-    }
-    return new Text(appBarTitles[curIndex],
-        style: new TextStyle(color: Colors.black));
-  }
-
-  var _bodies;
-
-  void initData() {
-    tabImages = [
-      [
-        getTabImage('images/home_normal.png'),
-        getTabImage('images/home_pressed.png')
-      ],
-      [
-        getTabImage('images/home_normal.png'),
-        getTabImage('images/home_pressed.png')
-      ]
-    ];
-    _bodies = [new HomePage(), new ShopPage()];
+  void onTap(int index) {
+    pageController.animateToPage(index,
+        duration: const Duration(milliseconds: 3), curve: Curves.linear);
   }
 }
