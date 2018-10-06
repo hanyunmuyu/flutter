@@ -42,6 +42,7 @@ class HomePageState extends State<HomePageWidget>
                 }));
               }),
           new PopupMenuButton<String>(
+              icon: new Icon(Icons.more_vert),
               onSelected: (String value) {
                 setState(() {
                   print(value);
@@ -52,7 +53,7 @@ class HomePageState extends State<HomePageWidget>
                         value: '选项一的值', child: new Text('选项一')),
                     new PopupMenuItem<String>(
                         value: '选项二的值', child: new Text('选项二'))
-                  ])
+                  ]),
         ],
         bottom: new TabBar(
           controller: _tabController,
