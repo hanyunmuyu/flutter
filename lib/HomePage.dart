@@ -50,7 +50,7 @@ class HomePageState extends State<HomePageWidget>
               },
               itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
                     new PopupMenuItem<String>(
-                        value: '选项一的值', child: new Text('选项一')),
+                        value: '选项一的值', child: FlatButton.icon(onPressed: null, icon: new Icon(Icons.group_add), label: new Text('11111111'))),
                     new PopupMenuItem<String>(
                         value: '选项二的值', child: new Text('选项二'))
                   ]),
