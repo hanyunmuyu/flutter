@@ -27,21 +27,6 @@ class HomePageState extends State<HomePageWidget>
 
   @override
   Widget build(BuildContext context) {
-    var items = [
-      new PopupMenuItem(
-        child: new FlatButton.icon(
-            onPressed: () {}, icon: new Icon(Icons.add), label: new Text('1')),
-        value: 1,
-      ),
-      new PopupMenuItem(
-        child: new Text('2'),
-        value: 2,
-      ),
-      new PopupMenuItem(
-        child: new Text('3'),
-        value: 3,
-      )
-    ];
     return new Scaffold(
       appBar: new AppBar(
         title: new Text('Home'),
@@ -56,12 +41,18 @@ class HomePageState extends State<HomePageWidget>
                   return new SearchPage();
                 }));
               }),
-          new PopupMenuButton(
-            itemBuilder: (BuildContext context) {
-              return items.toList();
-            },
-            icon: new Icon(Icons.add),
-          ),
+          new PopupMenuButton<String>(
+              onSelected: (String value) {
+                setState(() {
+                  print(value);
+                });
+              },
+              itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
+                    new PopupMenuItem<String>(
+                        value: '选项一的值', child: new Text('选项一')),
+                    new PopupMenuItem<String>(
+                        value: '选项二的值', child: new Text('选项二'))
+                  ])
         ],
         bottom: new TabBar(
           controller: _tabController,
