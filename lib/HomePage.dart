@@ -27,6 +27,21 @@ class HomePageState extends State<HomePageWidget>
 
   @override
   Widget build(BuildContext context) {
+    var items = [
+      new PopupMenuItem(
+        child: new FlatButton.icon(
+            onPressed: () {}, icon: new Icon(Icons.add), label: new Text('1')),
+        value: 1,
+      ),
+      new PopupMenuItem(
+        child: new Text('2'),
+        value: 2,
+      ),
+      new PopupMenuItem(
+        child: new Text('3'),
+        value: 3,
+      )
+    ];
     return new Scaffold(
       appBar: new AppBar(
         title: new Text('Home'),
@@ -41,12 +56,12 @@ class HomePageState extends State<HomePageWidget>
                   return new SearchPage();
                 }));
               }),
-          new IconButton(
-              icon: new Icon(
-                Icons.add,
-                color: Colors.white,
-              ),
-              onPressed: null)
+          new PopupMenuButton(
+            itemBuilder: (BuildContext context) {
+              return items.toList();
+            },
+            icon: new Icon(Icons.add),
+          ),
         ],
         bottom: new TabBar(
           controller: _tabController,

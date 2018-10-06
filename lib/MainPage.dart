@@ -64,7 +64,7 @@ class MainPageState extends State<MainPageWidget> {
           style: new TextStyle(color: Colors.blue));
     }
     return new Text(appBarTitles[curIndex],
-        style: new TextStyle(color: Colors.black12));
+        style: new TextStyle(color: Colors.black));
   }
 
   var _bodies;
