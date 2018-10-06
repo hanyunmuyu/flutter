@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'HomePage.dart';
 import 'ShopPage.dart';
+import 'UserPage.dart';
 
 class MainPage extends StatelessWidget {
   @override
@@ -27,7 +28,7 @@ class MainPageState extends State<MainPageWidget>
   Widget build(BuildContext context) {
     return new Scaffold(
       body: new PageView(
-          children: <Widget>[new HomePage(), new ShopPage()],
+          children: <Widget>[new HomePage(), new ShopPage(), new UserPage()],
           controller: pageController,
           onPageChanged: onPageChanged),
       bottomNavigationBar: new BottomNavigationBar(
@@ -35,7 +36,9 @@ class MainPageState extends State<MainPageWidget>
           new BottomNavigationBarItem(
               icon: new Icon(Icons.home), title: new Text('Home')),
           new BottomNavigationBarItem(
-              icon: new Icon(Icons.shop), title: new Text('Shop'))
+              icon: new Icon(Icons.shop), title: new Text('Shop')),
+          new BottomNavigationBarItem(
+              icon: new Icon(Icons.account_circle), title: new Text('User'))
         ],
         onTap: onTap,
         currentIndex: page,
