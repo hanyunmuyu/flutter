@@ -28,6 +28,7 @@ class HomePageState extends State<HomePageWidget>
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      key: ObjectKey("HomePage"),
       appBar: new AppBar(
         title: new Text('Home'),
         actions: <Widget>[
@@ -50,7 +51,11 @@ class HomePageState extends State<HomePageWidget>
               },
               itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
                     new PopupMenuItem<String>(
-                        value: '选项一的值', child: FlatButton.icon(onPressed: null, icon: new Icon(Icons.group_add), label: new Text('11111111'))),
+                        value: '选项一的值',
+                        child: FlatButton.icon(
+                            onPressed: null,
+                            icon: new Icon(Icons.group_add),
+                            label: new Text('11111111'))),
                     new PopupMenuItem<String>(
                         value: '选项二的值', child: new Text('选项二'))
                   ]),

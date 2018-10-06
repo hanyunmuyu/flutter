@@ -18,7 +18,7 @@ class MainPageWidget extends StatefulWidget {
   }
 }
 
-class MainPageState extends State<MainPageWidget> {
+class MainPageState extends State<MainPageWidget> with SingleTickerProviderStateMixin{
   int _tabIndex = 0;
   var tabImages;
   var appBarTitles = ['首页', '商铺', '消息', '我的'];

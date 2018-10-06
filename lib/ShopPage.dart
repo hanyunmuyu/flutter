@@ -6,6 +6,7 @@ class ShopPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       home: new Scaffold(
+        key: ObjectKey("ShopPage"),
         appBar: new AppBar(
           title: new Center(
             child: new Text('Shop'),
