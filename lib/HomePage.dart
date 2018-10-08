@@ -30,7 +30,19 @@ class HomePageState extends State<HomePageWidget>
     return new Scaffold(
       key: ObjectKey("HomePage"),
       appBar: new AppBar(
-        title: new Text('Home'),
+        title: new Container(
+          child: new Center(
+            child: new TabBar(
+              controller: _tabController,
+              tabs: myTabs,
+              isScrollable: true,
+              indicatorSize: TabBarIndicatorSize.tab,
+              labelColor: Colors.white,
+              labelStyle: new TextStyle(fontSize: 16.0),
+              unselectedLabelStyle: new TextStyle(fontSize: 12.0),
+            ),
+          ),
+        ),
         actions: <Widget>[
           new IconButton(
               icon: new Icon(
@@ -60,15 +72,6 @@ class HomePageState extends State<HomePageWidget>
                         value: '选项二的值', child: new Text('选项二'))
                   ]),
         ],
-        bottom: new TabBar(
-          controller: _tabController,
-          tabs: myTabs,
-          isScrollable: true,
-          indicatorSize: TabBarIndicatorSize.tab,
-          labelColor: Colors.white,
-          labelStyle: new TextStyle(fontSize: 16.0),
-          unselectedLabelStyle: new TextStyle(fontSize: 12.0),
-        ),
       ),
       body: new TabBarView(
         children: [new FirstPage(), new SecondPage()],
