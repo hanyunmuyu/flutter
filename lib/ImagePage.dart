@@ -7,11 +7,8 @@ import 'package:video_player/video_player.dart';
 class ImagePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Image Picker Demo',
-      home: new MyHomePage(
-        title: 'Image Picker Example',
-      ),
+    return new MyHomePage(
+      title: 'Image Picker Example',
     );
   }
 }
