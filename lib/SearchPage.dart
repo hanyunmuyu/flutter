@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+import 'tool/HttpController.dart';
 
 class SearchPage extends StatelessWidget {
   @override
@@ -24,23 +24,13 @@ class SearchPage extends StatelessWidget {
   }
 
   _get() async {
-//    var httpClient = new HttpClient();
-//    var uri =
-//        Uri.http('192.168.1.66:90', '/api/v1/login', {'mobile': '15701308875'});
-////    var request = await httpClient.post('192.168.1.66', 90, '/api/v1/login');
-//    var request = await httpClient.postUrl(uri);
-//    var response = await request.close();
-//    var responseBody = await response.join();
-//    print(responseBody);
+    var url = 'http://192.168.1.66:90/api/v1/login';
 
-    var url='http://192.168.1.66:90/api/v1/login';
-    var params={
-      'mobile':'15701308875'
-    };
+    HttpController.post(url, callback);
+  }
 
-
-    http.Response res = await http.post(url, body: params);
-    print(res.body);
+  void callback(String str) {
+    print(str);
   }
 }
 
@@ -58,7 +48,7 @@ class _searchState extends State<_searchWidget> {
   Widget build(BuildContext context) {
     return new Scaffold(
       body: new Center(
-        child: new Text('11111'),
+        child: new CircularProgressIndicator(),
       ),
     );
   }
