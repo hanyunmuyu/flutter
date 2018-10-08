@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'LoginPage.dart';
+import 'ImagePage.dart';
 
 class UserPage extends StatelessWidget {
   @override
@@ -19,7 +19,6 @@ class _UserWidget extends StatefulWidget {
 }
 
 class _UserState extends State<_UserWidget> {
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -28,12 +27,13 @@ class _UserState extends State<_UserWidget> {
           child: new RaisedButton.icon(
               onPressed: () {
                 Navigator.of(context).push(new MaterialPageRoute(builder: (_) {
-                  return new LoginPage();
+                  return new ImagePage();
                 }));
-              }, icon: new Icon(Icons.home
-          ), label: new Text('登录')),
+              },
+              icon: new Icon(Icons.camera),
+              label: new Text('图片浏览')),
         ),
       ),
-    )
+    );
   }
 }

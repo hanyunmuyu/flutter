@@ -17,3 +17,4 @@ For help getting started with Flutter, view our online
 -   [Flutter(二)：实现网络请求、json解析、ListView展示数据](https://blog.csdn.net/qq_16247851/article/details/81210771)
 -   [flutter_redux](https://pub.flutter-io.cn/packages/flutter_redux#-readme-tab-)
 -   [flutter_redux](https://pub.flutter-io.cn/packages/flutter_redux#-readme-tab-)
+-   [图片浏览](https://pub.flutter-io.cn/packages/image_picker#-readme-tab-)
