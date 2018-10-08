@@ -21,8 +21,12 @@ class HomePageState extends State<HomePageWidget>
     with SingleTickerProviderStateMixin {
   TabController _tabController;
   final List<Tab> myTabs = <Tab>[
-    new Tab(text: 'First'),
-    new Tab(text: 'Second'),
+    new Tab(
+      text: '首页',
+    ),
+    new Tab(
+      text: '高校',
+    ),
   ];
 
   @override
