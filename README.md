@@ -15,3 +15,5 @@ For help getting started with Flutter, view our online
 -   [底部导航栏,采用PageView实现，不知道能解决页面切换后状态被重置的问题，待会再说](https://blog.csdn.net/u011045726/article/details/79583423)
 -   [参考知乎大神的文章tab切换](https://zhuanlan.zhihu.com/p/37697590)
 -   [Flutter(二)：实现网络请求、json解析、ListView展示数据](https://blog.csdn.net/qq_16247851/article/details/81210771)
+-   [flutter_redux](https://pub.flutter-io.cn/packages/flutter_redux#-readme-tab-)
+-   [flutter_redux](https://pub.flutter-io.cn/packages/flutter_redux#-readme-tab-)
