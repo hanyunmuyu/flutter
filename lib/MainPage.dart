@@ -6,9 +6,7 @@ import 'UserPage.dart';
 class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new MainPageWidget(),
-    );
+    return new MainPageWidget();
   }
 }
 
