@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'ImagePage.dart';
 import 'ListViewPage.dart';
+import 'ContainerPage.dart';
+import 'BoxPage.dart';
+import 'StatePage.dart';
 
 class UserPage extends StatelessWidget {
   @override
@@ -44,7 +47,34 @@ class _UserState extends State<_UserWidget> {
                     }));
                   },
                   icon: new Icon(Icons.list),
-                  label: new Text('列表'))
+                  label: new Text('列表')),
+              new RaisedButton.icon(
+                  onPressed: () {
+                    Navigator.of(context)
+                        .push(new MaterialPageRoute(builder: (_) {
+                      return new ContainerPage();
+                    }));
+                  },
+                  icon: new Icon(Icons.pages),
+                  label: new Text('page')),
+              new RaisedButton.icon(
+                  onPressed: () {
+                    Navigator.of(context)
+                        .push(new MaterialPageRoute(builder: (_) {
+                      return new BoxPage();
+                    }));
+                  },
+                  icon: new Icon(Icons.move_to_inbox),
+                  label: new Text('BoxPage')),
+              new RaisedButton.icon(
+                  onPressed: () {
+                    Navigator.of(context)
+                        .push(new MaterialPageRoute(builder: (_) {
+                      return new StatePage();
+                    }));
+                  },
+                  icon: new Icon(Icons.move_to_inbox),
+                  label: new Text('StatePage')),
             ],
           ),
         ),
