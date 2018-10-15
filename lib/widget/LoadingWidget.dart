@@ -1,42 +1,32 @@
 import 'package:flutter/material.dart';
 
-class LoadingWidget extends StatelessWidget {
-  bool _loading = true;
-
-  LoadingWidget(this._loading);
-
-  @override
-  Widget build(BuildContext context) {
-    return new _LoadingWidget(this._loading);
-  }
-}
-
-class _LoadingWidget extends StatefulWidget {
-  bool _loading = true;
-
-  _LoadingWidget(this._loading);
-
+class LoadingWidget extends StatefulWidget {
   @override
   State createState() {
-    return new _LoadingState(this._loading);
+    return new _LoadingState();
   }
+
+  final bool active;
+
+  LoadingWidget({Key key, this.active: true});
 }
 
-class _LoadingState extends State<_LoadingWidget> {
-  bool _loading = true;
+//class _LoadingWidget extends StatefulWidget {
+//  @override
+//  State createState() {
+//    return new _LoadingState();
+//  }
+//}
 
-  _LoadingState(this._loading);
-
+class _LoadingState extends State<LoadingWidget> {
   @override
   Widget build(BuildContext context) {
-    print(this._loading);
-
-    return new Stack(
-      children: <Widget>[
-        new Center(
-          child: this._loading ? new CircularProgressIndicator() : null,
-        )
-      ],
+    return new Center(
+      child: widget.active
+          ? new CircularProgressIndicator(
+              strokeWidth: 2.0,
+            )
+          : null,
     );
   }
 }

@@ -19,6 +19,7 @@ class _LoginState extends State<_LoginWidget> {
   Widget build(BuildContext context) {
     return new Scaffold(
       body: new Text('11111111'),
-    )
+    );
+
   }
 }
