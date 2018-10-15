@@ -4,6 +4,7 @@ import 'ListViewPage.dart';
 import 'ContainerPage.dart';
 import 'BoxPage.dart';
 import 'StatePage.dart';
+import 'ListPage.dart';
 
 class UserPage extends StatelessWidget {
   @override
@@ -75,6 +76,15 @@ class _UserState extends State<_UserWidget> {
                   },
                   icon: new Icon(Icons.move_to_inbox),
                   label: new Text('StatePage')),
+              new RaisedButton.icon(
+                  onPressed: () {
+                    Navigator.of(context)
+                        .push(new MaterialPageRoute(builder: (_) {
+                      return new ListPage();
+                    }));
+                  },
+                  icon: new Icon(Icons.list),
+                  label: new Text('ListPage')),
             ],
           ),
         ),
