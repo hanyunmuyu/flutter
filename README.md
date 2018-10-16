@@ -22,6 +22,10 @@ For help getting started with Flutter, view our online
 -   [listview滚动到指定位置](https://www.jianshu.com/p/443f1aef488f)
 -   [Flutter进阶—创建有状态控件](https://blog.csdn.net/hekaiyou/article/details/71726226)
 
+-   [Flutter进阶—质感设计之表单输入](https://blog.csdn.net/hekaiyou/article/details/61197710)
+-   [flutter 输入框组件TextField](https://blog.csdn.net/u011272795/article/details/82528432?utm_source=blogxgwz0)
+
+
 踩过的坑：
 ```
   Widget build(BuildContext context) {
