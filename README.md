@@ -21,3 +21,48 @@ For help getting started with Flutter, view our online
 -   [Flutter listview下拉刷新 上拉加载更多 功能实现](https://blog.csdn.net/u011272795/article/details/82719640)
 -   [listview滚动到指定位置](https://www.jianshu.com/p/443f1aef488f)
 -   [Flutter进阶—创建有状态控件](https://blog.csdn.net/hekaiyou/article/details/71726226)
+
+踩过的坑：
+```
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      body: new PageView(
+        children: <Widget>[
+          new ActivePage(),
+          new ContactPage(),
+          new ResumePage(),
+          new AccountPage(),
+        ],
+        controller: _pageController,
+        onPageChanged: _onPageChanged,
+      ),
+      bottomNavigationBar: new BottomNavigationBar(
+        items: [
+          new BottomNavigationBarItem(
+              icon: new Icon(Icons.star),
+              title: new Text(
+                '动态',
+              )),
+          new BottomNavigationBarItem(
+              icon: new Icon(Icons.contacts),
+              title: new Text(
+                '通讯录',
+              )),
+          new BottomNavigationBarItem(
+              icon: new Icon(Icons.contacts),
+              title: new Text(
+                '通讯录',
+              )),
+          new BottomNavigationBarItem(
+              icon: new Icon(Icons.account_circle),
+              title: new Text(
+                '我的',
+              )),
+        ],
+        currentIndex: _page,
+        onTap: _onTap,
+        type: BottomNavigationBarType.fixed,//添加这个属性，多于三个的导航选项才会显示，否则多于三个都会被隐藏掉
+      ),
+    );
+  }
+```

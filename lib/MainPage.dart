@@ -40,6 +40,7 @@ class MainPageState extends State<MainPageWidget>
         ],
         onTap: onTap,
         currentIndex: page,
+        type: BottomNavigationBarType.fixed,
       ),
     );
   }
