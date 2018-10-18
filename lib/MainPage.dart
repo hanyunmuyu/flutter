@@ -36,7 +36,7 @@ class MainPageState extends State<MainPageWidget>
           new BottomNavigationBarItem(
               icon: new Icon(Icons.shop), title: new Text('Shop')),
           new BottomNavigationBarItem(
-              icon: new Icon(Icons.account_circle), title: new Text('User'))
+              icon: new Icon(Icons.person), title: new Text('User'))
         ],
         onTap: onTap,
         currentIndex: page,

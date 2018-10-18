@@ -5,7 +5,7 @@ import 'ContainerPage.dart';
 import 'BoxPage.dart';
 import 'StatePage.dart';
 import 'ListPage.dart';
-
+import 'AsyncPage.dart';
 class UserPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -85,6 +85,15 @@ class _UserState extends State<_UserWidget> {
                   },
                   icon: new Icon(Icons.list),
                   label: new Text('ListPage')),
+              new RaisedButton.icon(
+                  onPressed: () {
+                    Navigator.of(context)
+                        .push(new MaterialPageRoute(builder: (_) {
+                      return new AsyncPage();
+                    }));
+                  },
+                  icon: new Icon(Icons.add),
+                  label: new Text('AsyncPage')),
             ],
           ),
         ),
